@@ -1,32 +1,38 @@
 # simulador-rlc-rungekutta
-Simulador de circuito RLC em série com integração numérica (Runge-Kutta de 4ª ordem) e interface interativa
-
-
-# Simulador RLC com Método de Runge-Kutta
-
-Este projeto é um simulador interativo de um circuito RLC série, resolvido numericamente utilizando o **método de Runge–Kutta de 4ª ordem**. A simulação permite visualizar a corrente \( I(t) \) em função do tempo para diferentes configurações do circuito.
+Simulador interativo de um circuito **RLC série**, resolvido numericamente via **método de Runge–Kutta de 4ª ordem**, com visualização dinâmica da corrente \( I(t) \) ao longo do tempo. 
 
 ## Funcionalidades
 
-- Escolha dos parâmetros do circuito: resistência \( R \), indutância \( L \), capacitância \( C \)
-- Escolha entre fonte de corrente contínua (DC) ou alternada (AC senoidal)
-- Ajuste da tensão DC, ou da amplitude e frequência da fonte AC
+- Ajuste interativo dos parâmetros do circuito:
+  - Resistência \( R \) (Ω)
+  - Indutância \( L \) (H)
+  - Capacitância \( C \) (F)
+- Seleção do tipo de fonte:
+  - Corrente contínua (DC)
+  - Corrente alternada (AC senoidal)
+- Controle de:
+  - Tensão da fonte DC
+  - Amplitude e frequência da fonte AC
+- Cálculo e exibição de:
+  - Frequência de ressonância
+  - Impedância total do circuito
+  - Ângulo de fase (para AC)
 - Gráfico dinâmico da corrente \( I(t) \)
-- Método de Runge-Kutta de quarta ordem para solução numérica
+- Interface gráfica intuitiva via Matplotlib
 
-## Modelo matemático
+## Modelo Matemático
 
-A equação diferencial do circuito RLC série é:
+A equação diferencial do circuito RLC série é dada por:
 
 \[
 L \frac{d^2q}{dt^2} + R \frac{dq}{dt} + \frac{q}{C} = V(t)
 \]
 
-Definindo:
-- \( q \): carga no capacitor
-- \( I = \frac{dq}{dt} \): corrente no circuito
+Onde:
+- \( q(t) \): carga no capacitor
+- \( I(t) = \frac{dq}{dt} \): corrente
 
-Transformamos em um sistema de equações de primeira ordem:
+Transformando em um sistema de equações de primeira ordem:
 
 \[
 \begin{cases}
